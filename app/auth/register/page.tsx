@@ -7,7 +7,11 @@ import { Eye, EyeOff, Dumbbell } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { cn } from '@/lib/utils'
 
-const GYM_IMAGE = '/images/gym-register.webp'
+const PANEL_STYLE = {
+  background: 'linear-gradient(135deg, #0A1A18 0%, #0F2820 50%, #0A0F0A 100%)',
+  backgroundImage: 'radial-gradient(circle, rgba(20,184,166,0.12) 1px, transparent 1px)',
+  backgroundSize: '24px 24px',
+} as const
 
 // ─── Shared components ────────────────────────────────────────────────────────
 
@@ -99,13 +103,12 @@ export default function RegisterPage() {
   return (
     <div className="flex flex-col min-h-dvh md:h-dvh md:overflow-hidden md:flex-row bg-bg">
 
-      {/* ── Image panel ───────────────────────────────────────────────── */}
-      <div className="relative h-[40vh] shrink-0 md:h-full md:w-[55%] overflow-hidden">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={GYM_IMAGE} alt="" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/60" />
-
-        {/* Mobile — logo centré au milieu de l'image */}
+      {/* ── Gradient panel ────────────────────────────────────────────── */}
+      <div
+        className="relative h-[40vh] shrink-0 md:h-full md:w-[55%] overflow-hidden"
+        style={PANEL_STYLE}
+      >
+        {/* Mobile — logo centré */}
         <div className="md:hidden absolute inset-0 flex items-center justify-center">
           <Logo />
         </div>

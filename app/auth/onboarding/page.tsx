@@ -20,7 +20,12 @@ import type { Goal, Level } from '@/types/database'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const STEP1_IMAGE = '/images/gym-onboarding.webp'
+const PANEL_STYLE = {
+  background: 'linear-gradient(135deg, #0A1A18 0%, #0F2820 50%, #0A0F0A 100%)',
+  backgroundImage: 'radial-gradient(circle, rgba(20,184,166,0.12) 1px, transparent 1px)',
+  backgroundSize: '24px 24px',
+} as const
+
 const TOTAL_STEPS = 3
 
 const GOALS: { value: Goal; label: string; desc: string; icon: React.ElementType }[] = [
@@ -326,12 +331,12 @@ export default function OnboardingPage() {
       {/* ── Zone scrollable ──────────────────────────────────────────── */}
       <div className="flex-1 overflow-y-auto">
 
-        {/* Image illustrative — étape 1 seulement */}
+        {/* Gradient panel — étape 1 seulement */}
         {step === 1 && (
-          <div className="relative h-[25vh] shrink-0 overflow-hidden">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={STEP1_IMAGE} alt="" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-black/70" />
+          <div
+            className="relative h-[25vh] shrink-0 overflow-hidden"
+            style={PANEL_STYLE}
+          >
             <div className="absolute inset-0 flex items-start justify-between p-5">
               <Logo />
               <span className="font-body text-[12px] text-white/50 mt-1">
