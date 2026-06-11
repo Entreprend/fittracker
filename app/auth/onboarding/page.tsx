@@ -20,7 +20,7 @@ import type { Goal, Level } from '@/types/database'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const STEP1_BG = 'linear-gradient(180deg, #0F2820 0%, #0A0F0A 100%)'
+const STEP1_IMAGE = '/images/gym-onboarding.jpg'
 const TOTAL_STEPS = 3
 
 const GOALS: { value: Goal; label: string; desc: string; icon: React.ElementType }[] = [
@@ -328,14 +328,16 @@ export default function OnboardingPage() {
 
         {/* Image illustrative — étape 1 seulement */}
         {step === 1 && (
-          <div
-            className="h-[25vh] shrink-0 flex items-start justify-between p-5"
-            style={{ background: STEP1_BG }}
-          >
-            <Logo />
-            <span className="font-body text-[12px] text-white/50 mt-1">
-              {step} / {TOTAL_STEPS}
-            </span>
+          <div className="relative h-[25vh] shrink-0 overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={STEP1_IMAGE} alt="" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-black/70" />
+            <div className="absolute inset-0 flex items-start justify-between p-5">
+              <Logo />
+              <span className="font-body text-[12px] text-white/50 mt-1">
+                {step} / {TOTAL_STEPS}
+              </span>
+            </div>
           </div>
         )}
 

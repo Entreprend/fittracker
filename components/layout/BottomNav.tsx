@@ -17,10 +17,7 @@ export default function BottomNav() {
   const pathname = usePathname()
 
   return (
-    <nav
-      className="relative z-50 shrink-0 bg-surface border-t border-border flex items-stretch px-1"
-      style={{ height: 'calc(72px + env(safe-area-inset-bottom, 16px))', paddingBottom: 'env(safe-area-inset-bottom, 16px)' }}
-    >
+    <nav className="relative z-50 shrink-0 h-[64px] bg-surface border-t border-border flex items-stretch px-1">
       {TABS.map(({ href, label, icon: Icon }) => {
         const isActive =
           href === '/dashboard'

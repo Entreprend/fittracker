@@ -26,7 +26,10 @@ export default function AppShell({
   headerRight,
 }: AppShellProps) {
   return (
-    <div className="flex flex-col h-dvh w-full max-w-[430px] mx-auto bg-bg overflow-hidden">
+    <div
+      className="flex flex-col h-dvh max-w-[430px] mx-auto"
+      style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}
+    >
       <Header
         title={title}
         showBack={showBack}
@@ -34,10 +37,7 @@ export default function AppShell({
         rightContent={headerRight}
       />
 
-      <main
-        className="relative z-10 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain"
-        style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
-      >
+      <main className="relative z-10 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain bg-bg">
         {children}
       </main>
 

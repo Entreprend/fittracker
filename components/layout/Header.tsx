@@ -73,10 +73,7 @@ export default function Header({
   const router = useRouter()
 
   return (
-    <header
-      className="relative z-50 shrink-0 flex items-end gap-3 px-4 pb-3 bg-surface border-b border-border"
-      style={{ paddingTop: 'env(safe-area-inset-top)', minHeight: 'calc(60px + env(safe-area-inset-top))' }}
-    >
+    <header className="relative z-50 shrink-0 h-[60px] flex items-center gap-3 px-4 bg-surface border-b border-border">
       {/* ← Bouton retour */}
       {showBack && (
         <button

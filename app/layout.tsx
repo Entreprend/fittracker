@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Syne, DM_Sans } from 'next/font/google'
 import './globals.css'
+import PageTransition from '@/components/ui/PageTransition'
 
 const syne = Syne({
   subsets: ['latin'],
@@ -51,7 +52,7 @@ export default function RootLayout({
       className={`${syne.variable} ${dmSans.variable}`}
     >
       <body className="font-body bg-bg text-text1 antialiased">
-        {children}
+        <PageTransition>{children}</PageTransition>
       </body>
     </html>
   )
