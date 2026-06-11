@@ -19,12 +19,25 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: 'Fittracker',
   description: 'Suivi de musculation mobile-first',
+  manifest: '/manifest.json',
+  icons: {
+    apple: '/icon-192.png',
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'Fittracker',
+  },
+  other: {
+    'mobile-web-app-capable': 'yes',
+  },
 }
 
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
+  themeColor: '#14B8A6',
 }
 
 export default function RootLayout({

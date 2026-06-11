@@ -36,7 +36,7 @@ export default function AppShell({
 
       <main
         className="relative z-10 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain"
-        style={{ paddingBottom: 'calc(72px + env(safe-area-inset-bottom))' }}
+        style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
         {children}
       </main>
