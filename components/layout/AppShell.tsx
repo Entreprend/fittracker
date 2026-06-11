@@ -26,7 +26,7 @@ export default function AppShell({
   headerRight,
 }: AppShellProps) {
   return (
-    <div className="flex flex-col h-screen w-full max-w-[430px] mx-auto bg-bg overflow-hidden">
+    <div className="flex flex-col h-dvh w-full max-w-[430px] mx-auto bg-bg overflow-hidden">
       <Header
         title={title}
         showBack={showBack}

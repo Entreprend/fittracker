@@ -7,8 +7,11 @@ import { Eye, EyeOff, Dumbbell } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { cn } from '@/lib/utils'
 
-const GYM_IMAGE = 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80'
-const OVERLAY   = 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(10,15,10,0.95) 100%)'
+const PANEL_BG   = 'linear-gradient(135deg, #0A1A18 0%, #0F2820 40%, #0A1510 100%)'
+const DOTS_OVERLAY = {
+  backgroundImage: 'radial-gradient(circle, rgba(20,184,166,0.15) 1px, transparent 1px)',
+  backgroundSize: '20px 20px',
+} as const
 
 // ─── Shared components ────────────────────────────────────────────────────────
 
@@ -93,16 +96,12 @@ export default function LoginPage() {
     <div className="min-h-screen md:h-screen md:overflow-hidden flex flex-col md:flex-row bg-bg">
 
       {/* ── Image panel ───────────────────────────────────────────────── */}
-      <div className="relative h-[40vh] shrink-0 md:h-full md:w-[55%] overflow-hidden">
-        {/* Gym background */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={GYM_IMAGE}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
-        {/* Gradient overlay */}
-        <div className="absolute inset-0" style={{ background: OVERLAY }} />
+      <div
+        className="relative h-[40vh] shrink-0 md:h-full md:w-[55%] overflow-hidden"
+        style={{ background: PANEL_BG }}
+      >
+        {/* Dots overlay */}
+        <div className="absolute inset-0" style={DOTS_OVERLAY} />
 
         {/* Mobile — logo centré au milieu de l'image */}
         <div className="md:hidden absolute inset-0 flex items-center justify-center">

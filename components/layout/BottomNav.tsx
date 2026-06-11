@@ -19,7 +19,7 @@ export default function BottomNav() {
   return (
     <nav
       className="relative z-50 shrink-0 bg-surface border-t border-border flex items-stretch px-1"
-      style={{ height: 'calc(72px + env(safe-area-inset-bottom))', paddingBottom: 'env(safe-area-inset-bottom)' }}
+      style={{ height: 'calc(72px + env(safe-area-inset-bottom, 16px))', paddingBottom: 'env(safe-area-inset-bottom, 16px)' }}
     >
       {TABS.map(({ href, label, icon: Icon }) => {
         const isActive =

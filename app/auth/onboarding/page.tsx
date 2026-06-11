@@ -20,8 +20,7 @@ import type { Goal, Level } from '@/types/database'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const STEP1_IMAGE = 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80'
-const IMG_OVERLAY = 'linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(10,15,10,0.90) 100%)'
+const STEP1_BG = 'linear-gradient(180deg, #0F2820 0%, #0A0F0A 100%)'
 const TOTAL_STEPS = 3
 
 const GOALS: { value: Goal; label: string; desc: string; icon: React.ElementType }[] = [
@@ -329,20 +328,14 @@ export default function OnboardingPage() {
 
         {/* Image illustrative — étape 1 seulement */}
         {step === 1 && (
-          <div className="relative h-[25vh] overflow-hidden shrink-0">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={STEP1_IMAGE}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover object-center"
-            />
-            <div className="absolute inset-0" style={{ background: IMG_OVERLAY }} />
-            <div className="absolute inset-0 flex items-start justify-between p-5">
-              <Logo />
-              <span className="font-body text-[12px] text-white/50 mt-1">
-                {step} / {TOTAL_STEPS}
-              </span>
-            </div>
+          <div
+            className="h-[25vh] shrink-0 flex items-start justify-between p-5"
+            style={{ background: STEP1_BG }}
+          >
+            <Logo />
+            <span className="font-body text-[12px] text-white/50 mt-1">
+              {step} / {TOTAL_STEPS}
+            </span>
           </div>
         )}
 
