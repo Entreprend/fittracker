@@ -20,7 +20,7 @@ import type { Goal, Level } from '@/types/database'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const STEP1_IMAGE = '/images/gym-onboarding.jpg'
+const STEP1_IMAGE = '/images/gym-onboarding.webp'
 const TOTAL_STEPS = 3
 
 const GOALS: { value: Goal; label: string; desc: string; icon: React.ElementType }[] = [

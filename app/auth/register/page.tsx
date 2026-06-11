@@ -7,7 +7,7 @@ import { Eye, EyeOff, Dumbbell } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { cn } from '@/lib/utils'
 
-const GYM_IMAGE = '/images/gym-register.jpg'
+const GYM_IMAGE = '/images/gym-register.webp'
 
 // ─── Shared components ────────────────────────────────────────────────────────
 
@@ -97,7 +97,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen md:h-screen md:overflow-hidden flex flex-col md:flex-row bg-bg">
+    <div className="flex flex-col min-h-dvh md:h-dvh md:overflow-hidden md:flex-row bg-bg">
 
       {/* ── Image panel ───────────────────────────────────────────────── */}
       <div className="relative h-[40vh] shrink-0 md:h-full md:w-[55%] overflow-hidden">
