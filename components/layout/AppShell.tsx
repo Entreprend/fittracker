@@ -27,8 +27,12 @@ export default function AppShell({
 }: AppShellProps) {
   return (
     <div
-      className="flex flex-col h-dvh max-w-[430px] mx-auto"
-      style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}
+      className="flex flex-col max-w-[430px] mx-auto bg-bg"
+      style={{
+        height: '100vh',
+        paddingTop: 'max(env(safe-area-inset-top), 20px)',
+        paddingBottom: 'env(safe-area-inset-bottom, 8px)',
+      }}
     >
       <Header
         title={title}
